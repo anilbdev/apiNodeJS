@@ -13,6 +13,9 @@ module.exports = {
     },
     userMessage:{
         SIGNUP_SUCCESS:'Sign up success',
-        DUPLICATE_USER:'Duplicate User'
+        LOGIN_SUCCESS:'Login success',
+        DUPLICATE_USER:'Duplicate User',
+        USER_NOT_FOUND:"User not found",
+        INVALID_PASSWORD:"Invalid Password"
     }
 }
