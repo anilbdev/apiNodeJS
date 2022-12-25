@@ -8,14 +8,15 @@ const app = express()
 
 //db connection
 dbConnection()
-// const myMiddleware = (req,res,next)=>{
-//     console.log('Middleware run');
-//     next()
-// }
 
+//CORS enabled
 app.use(cors())
+//Requst content type application/json
 app.use(express.json())
+//Parsing the form url encoded
 app.use(express.urlencoded({ extended: true }))
+
+//Any which are unhandled
 app.use((err, req, res, next) =>
 {
     console.error(err.stack)
@@ -27,7 +28,7 @@ app.use((err, req, res, next) =>
 })
 
 app.use('/api/v1/product', productRouter)
-app.use('/api/v1/category', productRouter)
+// app.use('/api/v1/category', productRouter)
 app.get('/', (req, res) =>
 {
     res.send('Hello')

@@ -60,3 +60,18 @@ module.exports.updateProductById=async (req,res)=>{
     }
     return res.status(response.status).send(response)
 }
+
+module.exports.deleteProductById=async (req,res)=>{
+   
+    let response ={...constants.defaultServerResponse}
+    try {
+        const responseFromService = await productService.deleteProductById(req.params.id)
+        response.status =200
+        response.message= constants.productMessage.PRODUCT_DELETED_ID
+        response.body = responseFromService
+    } catch (error) {
+        console.log('Something went wrong : Controller :deleted product by ID',error);
+        response.message= error.message
+    }
+    return res.status(response.status).send(response)
+}

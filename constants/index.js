@@ -9,5 +9,6 @@ module.exports = {
         PRODUCT_FETCHED:'Products fetched succesfully',
         PRODUCT_FETCHED_ID:'Product fetched by ID succesfully',
         PRODUCT_UPDATED_ID:'Product updated by ID succesfully',
+        PRODUCT_DELETED_ID:'Product deleted by ID succesfully'
     }
 }
