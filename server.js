@@ -3,6 +3,7 @@ const dotEnv = require('dotenv')
 const cors = require('cors')
 const dbConnection = require('./database/connection')
 const productRouter = require('./routes/productRoute')
+const userRouter = require('./routes/userRouter')
 dotEnv.config()
 const app = express()
 
@@ -28,11 +29,8 @@ app.use((err, req, res, next) =>
 })
 
 app.use('/api/v1/product', productRouter)
-// app.use('/api/v1/category', productRouter)
-app.get('/', (req, res) =>
-{
-    res.send('Hello')
-})
+app.use('/api/v1/user', userRouter)
+
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () =>
