@@ -3,7 +3,6 @@ const constants = require('../constants/index')
 
 const validateObjectSchema = (data,schema)=>{
     const result = schema.validate(data,{ convert: false })
-    console.log(result);
     if(result.error){
         const errorMessage = result.error.details.map(value=>{
             return {

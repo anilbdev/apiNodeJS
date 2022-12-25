@@ -17,5 +17,8 @@ module.exports = {
         DUPLICATE_USER:'Duplicate User',
         USER_NOT_FOUND:"User not found",
         INVALID_PASSWORD:"Invalid Password"
+    },
+    requestValidationMessage:{
+        TOCKEN_MISSING:"Tocken missing"
     }
 }

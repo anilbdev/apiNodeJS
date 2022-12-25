@@ -36,7 +36,7 @@ module.exports.loginUser = async ({ email, password }) =>
         if(!isValid){
             throw new Error(constants.userMessage.INVALID_PASSWORD)
         }
-        let tocken = jwt.sign({id:user._id},process.env.SECRER_KEY || 'MY-KEY',{expiresIn:300})
+        let tocken = jwt.sign({id:user._id},process.env.SECRER_KEY || 'my-key',{expiresIn:'1d'})
         return {tocken}
     } catch (error)
     {
